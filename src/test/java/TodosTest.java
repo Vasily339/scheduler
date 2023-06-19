@@ -11,6 +11,7 @@ public class TodosTest {
     Epic ep1 = new Epic(16, subtasks1);
     String[] subtasks2 = {"заехать на шиномонтаж", "позвонить на работу", "подать заявку"};
     Epic ep2 = new Epic(19, subtasks2);
+
     @Test
     public void shouldFindSimpleTaskAlarmClock() {
         Todos todos = new Todos();
@@ -22,6 +23,7 @@ public class TodosTest {
         Task[] actual = todos.search("поставить будильник");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindSimpleTask() {
         Todos todos = new Todos();
@@ -33,6 +35,7 @@ public class TodosTest {
         Task[] actual = todos.search("ужин");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMeetingRepair() {
         Todos todos = new Todos();
@@ -44,6 +47,7 @@ public class TodosTest {
         Task[] actual = todos.search("ремонт");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindMeeting() {
         Todos todos = new Todos();
@@ -55,6 +59,7 @@ public class TodosTest {
         Task[] actual = todos.search("еда");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindWay() {
         Todos todos = new Todos();
@@ -66,6 +71,7 @@ public class TodosTest {
         Task[] actual = todos.search("подать заявку");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindEpicTask() {
         Todos todos = new Todos();
@@ -77,6 +83,7 @@ public class TodosTest {
         Task[] actual = todos.search("игра");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindInDifferencesType() {
         Todos todos = new Todos();
@@ -110,7 +117,6 @@ public class TodosTest {
     }
 
 
-
     @Test
     public void shouldAddThreeTasksOfDifferentType() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
@@ -135,6 +141,7 @@ public class TodosTest {
         Task[] actual = todos.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindAllTasks() {
         Todos todos = new Todos();
